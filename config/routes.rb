@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'home', to: 'home#show'
+  get 'info', to: 'info#show'
   
   get '/:name', to: 'links#redir'
+
   root to: "home#show"
 end
