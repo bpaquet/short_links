@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Short Links</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header clearfix">
+      <% if current_user %>
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation"><%= current_user.first_name %> <%= current_user.last_name %></li>
+          </ul>
+        </nav>
+        <% end %>
+        <h3 class="text-muted">My links</h3>
+      </div>
+
+      <%= yield %>
+    </div>
+  </body>
+</html>
