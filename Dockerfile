@@ -1,6 +1,6 @@
 FROM ruby:2.5-alpine
 
-RUN apk add --no-cache --update build-base tzdata postgresql-dev
+RUN apk add --no-cache --update build-base tzdata postgresql-dev nodejs
 
 RUN mkdir /app
 WORKDIR /app
@@ -8,7 +8,7 @@ WORKDIR /app
 COPY Gemfile /app/Gemfile
 COPY Gemfile.lock /app/Gemfile.lock
 
-RUN bundle install --without test,development
+RUN bundle install --without test development
 
 EXPOSE 3000
 
