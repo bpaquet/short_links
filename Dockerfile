@@ -1,7 +1,6 @@
-FROM ruby:2.5
+FROM ruby:2.5-alpine
 
-RUN apt-get update -qq && apt-get install -y build-essential
-RUN apt-get update -qq && apt-get install -y nodejs
+RUN apk add --no-cache --update build-base tzdata postgresql-dev
 
 RUN mkdir /app
 WORKDIR /app
