@@ -14,7 +14,7 @@ EXPOSE 3000
 
 COPY . .
 
-RUN RAILS_ENV=production DATABASE_URL=postgresql://user:pass@127.0.0.1/dbname rake assets:precompile
+RUN SECRET_KEY_BASE=xxx RAILS_ENV=production DATABASE_URL=postgresql://user:pass@127.0.0.1/dbname rake assets:precompile
 
 ENV RAILS_ENV=production
 ENV RAILS_LOG_TO_STDOUT=true
