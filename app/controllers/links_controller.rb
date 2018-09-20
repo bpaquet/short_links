@@ -9,7 +9,7 @@ class LinksController < ApplicationController
   def redir
     link = Link.find_by_name(params[:name])
     if link
-      link.counter += 1
+      link.increment(:counter)
       link.save
       redirect_to link.target
     else
