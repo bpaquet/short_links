@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_04_145050) do
+ActiveRecord::Schema.define(version: 2018_09_20_162601) do
 
   create_table "links", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2018_09_04_145050) do
     t.string "owners"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "counter", default: 0
   end
 
   create_table "users", force: :cascade do |t|
@@ -26,7 +27,6 @@ ActiveRecord::Schema.define(version: 2018_09_04_145050) do
     t.string "email"
     t.string "first_name"
     t.string "last_name"
-    t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -9,6 +9,8 @@ class LinksController < ApplicationController
   def redir
     link = Link.find_by_name(params[:name])
     if link
+      link.counter += 1
+      link.save
       redirect_to link.target
     else
       render status: 404, plain: "Not found\n"
