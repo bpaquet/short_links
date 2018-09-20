@@ -20,7 +20,7 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
-    @links = Link.where('owners LIKE ?', current_user.email)
+    @links = Link.where('owners LIKE ?', current_user.email).order(:name)
   end
 
   # GET /links/1
